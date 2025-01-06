@@ -19,7 +19,7 @@
 
 ### 🚀 Live Demo
 
-<a href="https://movie-journal-9qyx.onrender.com" target="_blank" rel="noopener noreferrer">View Project</a>   
+<a href="https://movie-journal-afxj.onrender.com" target="_blank" rel="noopener noreferrer">View Project</a>   
 
 ### 📷 Screenshots
 
