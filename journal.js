@@ -1,7 +1,5 @@
-/* ---------------------------------------------------------------- */
 const main = document.getElementById('movie-container-home')
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-
 const data = JSON.parse(localStorage.getItem('favorites')) || [];
 
 if(data){
@@ -12,9 +10,9 @@ function showMovies(data){
     data.forEach(movie => {
         const {title, poster_path, release_date, review} = movie;
         const movieEl = document.createElement('div');
-        movieEl.classList.add('relative', 'border-2', 'border-gray-800', 'text-center', 'bg-gray-100', 'p-4', 'shadow-md', 'flex', 'flex-col');
+        movieEl.classList.add('relative', 'text-center', 'rounded-sm', 'bg-gray-100', 'p-4', 'shadow-md', 'flex', 'flex-col');
         movieEl.innerHTML = `
-        <img id="movie-image" class="w-full h-auto" src="${IMG_URL+poster_path}" alt="${title}">
+        <img id="movie-image" class="w-full rounded-sm h-auto" src="${IMG_URL+poster_path}" alt="${title}">
                 <div id='button-container' class="flex-grow border-t-2 border-gray-800 flex flex-col justify-between border-solid">
                     <h2 id="movie-title" class="text-xl font-semibold">${title}
                     </h2>
@@ -22,12 +20,11 @@ function showMovies(data){
                     </p>
                     <!-- Button To remove the saved movie -->
                     <div class= "flex flex-col items-center mt-auto space-y-2">
-                    <button id="removeCard" class=" remove uppercase w-full px-6 py-2 bg-red-500 hover:bg-red-800 text-white ">Remove</button>
-                    <button id="add-Review" class=" addReview uppercase w-full mt-2 px-6 py-2 bg-gray-400 hover:bg-gray-300 ">Add review</button>
+                    <button id="removeCard" class=" remove uppercase w-full px-6 py-2 bg-red-500 rounded-sm hover:bg-red-800 text-white ">Remove</button>
+                    <button id="add-Review" class=" addReview uppercase w-full mt-2 px-6 py-2 rounded-sm bg-[#B2B9C3] hover:bg-gray-400 ">Add review</button>
                     </div>
                     </div>`
                     main.appendChild(movieEl);
-
                     if (review) {
                         const reviewEl = document.createElement('p');
                         reviewEl.innerText = `Review: ${review}`;
@@ -39,15 +36,11 @@ function showMovies(data){
 const removeButton = movieEl.querySelector('.remove');
 removeButton .addEventListener('click',() => removeFromFavorites(movie));
 
-
 //Setting up a button to add a review
 const addReviewButton = movieEl.querySelector('.addReview');
 addReviewButton.addEventListener('click', () => addReview(movie, movieEl)); // Pass movieEl as an argument
-
-
     })
 }
-
 
 // Function to remove a movie from favorites
 function removeFromFavorites(movieToRemove) {
@@ -57,16 +50,11 @@ function removeFromFavorites(movieToRemove) {
     location.reload();
 }
 
-
-
 // Function to handle adding a review
-function addReview(movie, movieEl) { // Add movieEl as a parameter
-    // Create an input field (textarea) for adding the review
+function addReview(movie, movieEl) { 
     const reviewInput = document.createElement('textarea');
     reviewInput.placeholder = 'Write your review here...';
     reviewInput.classList.add('review-input', 'border', 'border-gray-500', 'w-full', 'p-2', 'my-2');
-
-    // uppercase w-full px-6 py-2 bg-red-500 hover:bg-red-800 text-white
 
     // Create a button to submit the review
     const submitReviewButton = document.createElement('button');
@@ -81,7 +69,6 @@ function addReview(movie, movieEl) { // Add movieEl as a parameter
     submitReviewButton.addEventListener('click', () => {
         const review = reviewInput.value;
         if (review) {
-            // Update the movie object with the review
             movie.review = review;
 
             // Get the current favorites from local storage
@@ -90,14 +77,12 @@ function addReview(movie, movieEl) { // Add movieEl as a parameter
             // Find the movie in the local storage array and update it
             const updatedFavorites = favorites.map(favMovie => {
                 if (favMovie.title === movie.title) {
-                    return { ...favMovie, review: movie.review }; // Update the review
+                    return { ...favMovie, review: movie.review };
                 }
                 return favMovie;
             });
-
-            // Save the updated favorites array back to local storage
             localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-
+            
             // Display the review on the page
             const reviewEl = document.createElement('p');
             reviewEl.innerText = `Review: ${movie.review}`;
@@ -128,14 +113,11 @@ searchForm.addEventListener("submit", (e) => {
         const filteredMovies = favorites.filter(movie => movie.title.toLowerCase().includes(searchTerm));
 
         if (filteredMovies.length > 0) {
-            // Show the filtered movies
             showMovies(filteredMovies);
         } else {
-            // If no movies are found, show an alert
             alert("We couldn't find that title in your favorites!");
         }
     } else {
-        // If no search term is provided, display all favorites
         showMovies(favorites);
     }
 });

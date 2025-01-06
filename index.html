@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Just A Working Title -->
     <title>Movie Journal | Home</title>
-    <link rel="stylesheet" href="output.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
         body {
@@ -22,14 +21,12 @@
                 <li class="py-1"><a href="journal.html" class="text-white hover:text-yellow-300">Journal</a></li>
             </ul>
         </nav>
-        <!-- Input Form For Search Request -->
         <form id="header-form" class="items-end">
-            <input id="header-form-button" class="border-grey-500 border-2 text-center px-6 py-1 uppercase mr-1 hover:cursor-pointer bg-yellow-400 text-grey-800 hover:bg-yellow-300" type="submit" value="Search">
-            <input id="header-form-input" class="border-gray-500 border-2 text-center px-6 py-1 uppercase m-1 bg-gray-800 text-gray-100" placeholder="Enter movie title" type="text">
+            <input id="header-form-button" class="border-grey-500 text-center px-6 py-1 rounded-sm uppercase mr-1 hover:cursor-pointer bg-yellow-400 text-grey-800 hover:bg-yellow-300" type="submit" value="Search">
+            <input id="header-form-input" class="border-gray-500 border text-center px-6 py-1 rounded-sm uppercase m-1 bg-gray-800 text-gray-100" placeholder="Enter movie title" type="text">
         </form>
     </header>
     <main>
-        <!-- Main Container To Populate Movie Cards In -->
         <div id="movie-container-home" class="grid xl:grid-cols-6 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4 p-8 bg-gray-700">
         </div>
     </main>

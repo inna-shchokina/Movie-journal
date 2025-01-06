@@ -1,7 +1,4 @@
-//TMDB, URL requests
-
 const API_KEY = 'api_key=e13239c36d67aaae5fd854a738bd27ed';
-//const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
@@ -21,9 +18,9 @@ function showMovies(data){
     data.forEach(movie => {
         const {title, poster_path, release_date} = movie;
         const movieEl = document.createElement('div');
-        movieEl.classList.add('relative','border-2', 'border-gray-800', 'text-center', 'bg-gray-100', 'p-4', 'shadow-md', 'flex', 'flex-col');
+        movieEl.classList.add('relative', 'text-center', 'rounded-sm', 'bg-gray-100', 'p-4', 'shadow-md', 'flex', 'flex-col');
         movieEl.innerHTML = `
-        <img id="movie-image" class="w-full h-auto" src="${IMG_URL+poster_path}" alt="${title}">
+        <img id="movie-image" class="w-full rounded-sm h-auto" src="${IMG_URL+poster_path}" alt="${title}">
                 <div class="flex-grow border-t-2 border-gray-800 flex flex-col justify-between border-solid">
                     <h2 id="movie-title" class="text-xl font-semibold">${title}
                     </h2>
@@ -31,7 +28,7 @@ function showMovies(data){
                     </p>
                     <!-- Button To Add Movies To Local Storage: Local Storage Is Displayed on Journal Page -->
                     <div class="mt-auto">
-                    <button id="add-journal-button" class="w-full uppercase px-6 py-2 bg-yellow-400 hover:bg-yellow-500 transition-colors duration-300 add-to-favorites">Add to favorites</button>
+                    <button id="add-journal-button" class="w-full rounded-sm uppercase px-6 py-2 bg-yellow-400 hover:bg-yellow-500 transition-colors duration-300 add-to-favorites">Add to favorites</button>
                     </div>`
                     main.appendChild(movieEl);
 //Setting up a button "Add to favorites" to add a movie to favorites
@@ -43,7 +40,7 @@ if (favorites.find(favorite => favorite.id === movie.id)) {
     addToFavoritesButton.textContent = 'Added to favorites';
     addToFavoritesButton.disabled = true;
     addToFavoritesButton.classList.remove ('bg-yellow-400', 'hover:bg-yellow-500');
-    addToFavoritesButton.classList.add ('bg-gray-400');
+    addToFavoritesButton.classList.add ('bg-[#B2B9C3]');
 }
 //Add event listener to the button
 addToFavoritesButton.addEventListener('click',() => { addToFavorites(movie, addToFavoritesButton);
