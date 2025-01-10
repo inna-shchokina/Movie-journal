@@ -23,10 +23,10 @@
 
 ### 📷 Screenshots
 
-<a href="https://github.com/inna-shchokina/Movie-journal/blob/main/screens_movie_journal/Movie_journal-1.jpg?raw=true" rel="noopener noreferrer">View Interface Screenshot 1</a> 
+<a href="https://github.com/inna-shchokina/Movie-journal/blob/main/screens_movie_journal/Movie_journal-1.jpg?raw=true" rel="noopener noreferrer">View Home Page</a> 
 <br>
-<a href="https://github.com/inna-shchokina/Movie-journal/blob/main/screens_movie_journal/Movie_journal-2.jpg?raw=true" target="_blank" rel="noopener noreferrer">View Interface Screenshot 2</a>
+<a href="https://github.com/inna-shchokina/Movie-journal/blob/main/screens_movie_journal/Movie_journal-2.jpg?raw=true" target="_blank" rel="noopener noreferrer">View Home Page with Searching</a>
 <br>
-<a href="https://github.com/inna-shchokina/Movie-journal/blob/main/screens_movie_journal/Movie_journal-3.jpg?raw=true" target="_blank" rel="noopener noreferrer">View Interface Screenshot 3</a>
+<a href="https://github.com/inna-shchokina/Movie-journal/blob/main/screens_movie_journal/Movie_journal-3.jpg?raw=true" target="_blank" rel="noopener noreferrer">View Journal Page</a>
 <br>
-<a href="https://github.com/inna-shchokina/Movie-journal/blob/main/screens_movie_journal/Movie_journal-4.jpg?raw=true" target="_blank" rel="noopener noreferrer">View Interface Screenshot 4</a> 
+<a href="https://github.com/inna-shchokina/Movie-journal/blob/main/screens_movie_journal/Movie_journal-4.jpg?raw=true" target="_blank" rel="noopener noreferrer">View Journal Page with Review</a> 
